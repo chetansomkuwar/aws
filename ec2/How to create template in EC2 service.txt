@@ -1,0 +1,9 @@
+How to create template in EC2 service.
+
+Step 1 - select specific instance >> go to "launch templates" (in Instance section on left side of Dashboard.)
+
+Steps 2 - click on "Create Launch Template" >> "Template name" >> select "Application & OS image" (1. Don't include in launch tmpl 2. Currently in used) 
+		
+	    >> select instance type (t2 micro.free) >> key pair >> Security Group >> Storage >> Tags >> (ADVANCE SETTING- SPOT INSTANCE) xx >> Review and Launch.
+
+Step 3 - check in Launch templates..........where template has been created or not ?

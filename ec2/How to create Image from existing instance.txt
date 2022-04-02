@@ -1,0 +1,8 @@
+How to create Image from existing instance ?
+
+Step 1 - Select existing instance
+
+Step 2 - go to "Action" >> "Image & Templates" >> "Create Image" >> 
+
+Step 3 - we can view Image in "IAMAGE" ec2 service >> AMIs OR "Launch instance >> "My AMIs"				 
+

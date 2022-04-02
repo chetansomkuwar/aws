@@ -1,0 +1,5 @@
+How to create instance with existing template ?
+
+Step 1 - go to instance | launch instance from templates >> select created template >> launch.
+
+Note:- here firstly we have to create template of already running instance, because we don't want to delete the user's accessing data from our instance.

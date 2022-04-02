@@ -1,0 +1,14 @@
+Step 1 - open ec2 service
+
+Step 2 - Launch Instance
+
+Step 3 - Add Scripting in "configure instance in step 3"
+
+#!/bin/bash
+yum update all
+yum install httpd -y
+systemctl start httpd 
+systemctl enable httpd
+echo "Hello Rupam, Bongade vaibhav" >> /var/www/html/index.html
+
+Step 4- security group - Add Http service and select source -anywhere

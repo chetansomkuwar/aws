@@ -1,0 +1,11 @@
+How to convter public IP into Static Elastic IP.
+
+Step 1 - Select specific instance with named "httpd-instance"
+
+Step 2 - go to "Network & Security" >> "Elastic IP" from left section of Dashboard
+
+Step 3 - Elastic IP >> Allocate Elastic IP >> Allocate (Now, we allocate static IP)>> 
+
+Step 4 - select allocated ip address >> Action >> Associate Elastic IP address.
+
+Step 5 - go to instance >> select instance named "http instance" >> stop & start, now our public ip is converted into Static elastic IP.
