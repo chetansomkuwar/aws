@@ -1,0 +1,9 @@
+Diffrence between Image and Template:-
+
+Image = 1. exact copy of the software (only)
+	  2. while, launching instacne we have to go through from stage 2-stage 7, we have to compelete these all stages.
+	  3. we can customized AMI image as per our specification.
+
+Template = 1. somewhat exact copy of the hardware (no software)s
+	      2. while, launching instacne here, we don't have to go from all 7 stages, we can able to launch our instance directly from templates.
+	      3. we can't able to customized AMI image as per our choice. 
