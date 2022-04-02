@@ -1,0 +1,65 @@
+Elastic Block Storage										Create can create a IMAGE of two things:- 1.Instance
+																				2.Snapshot
+Volume State:-
+1. creating:- The volume is being created.
+2. available:- The volume is not attached to an instance.
+3. in-use:- The volume is attached to an instance.
+4. deleting:- The volume is being deleted.
+5. deleted:- The volume is deleted.
+6. error:- hardware related to your EBS volume has failed
+
+How to create and attch volume to instance ?
+
+Step 1 - Go to "EBS" section >> create volume >> attach to the instance.
+
+Note:- 
+1. EC2 instance & created volume should be in same availability zone.
+2. In running condition we can also "attach volume" and "modify our volume"
+3. we can't reduce volume in running condition.
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+How to create snapshot of volume and instance ?
+
+Step 1 - create "volume or instance" and give a "Name" of that instance and volume to identify them.
+
+Step 2 - go to "Create Snap Shot" >> Select Volume or Instance >> add tags >> Done
+
+Note:-
+1. Snapshots can be used to create a backup of critical workloads.
+2. we can make older version of server by using this snapshot.s
+3. Best way to take snapshot is "instance is in running condition" because we can't stop our customers traffic eg. flipkart, FB.
+4. we can take a image's snapshot ---> with including Root's Volume 
+   we can take a w/o image's snapshot ---> w/o exccluding Roots's Volume (EBS Volume)
+..............................................................................................................................
+
+How we can change Availability Zone ?									Traffic:- to we can view the data
+															Volume:- we can able to store the data
+ans:- we can only change AZ's when we create "Volume" ---> from "snapshot"
+	 
+	SNAPSHOT ----> VOLUME...then we can change AZ's.
+	
+[ Note:- we also can create image from Snapshot ]
+
+
+Step 1:- select any snapshot >> "Create Volume from Snapshot"
+
+...............................................................................................................................
+
+How to create Life Cyle Manager ?
+
+we can create 3 Life cycle policy:-
+1. EBS Snapshot Policy						....it follow tags of our snapshot....
+2. EBS-Backed AMI Policy
+3. Cross-account copy event policy
+
+---------------EBS Snapshot Policy--------------
+
+Step 1 - firstly we have one instance & Volume and Snapshot of that instance & Volume.
+Step 2 - go to the "Life Cycle Manager" >> Select which "Life Cycle Policy" we want {Source Type :- Volume & Instance}
+Step 3 - Advance Setting >> create "tag" our Policy creates now.
+
+
+		Age:- we have to specify the "no of days to expired".
+		Count:- we have to specify the no of days to ruled out.
+.................................................................................................................................
+ 
