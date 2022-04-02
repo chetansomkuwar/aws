@@ -1,0 +1,55 @@
+Policies:
+1 create policy to access all object in specific bucket
+--create bucket & upload 2 files(object) with the help of S3 service.
+--policy create S3 select 1 bucket and specify resources add bucket ARN & "select ANY in object field".
+--attched policy to local user ironman & acces it through localuser ironman.
+
+
+2 create policy to access only 2 object in specific bucket
+--Create bucket named avengers-1 & upload 2 files (object) in avengers-1.
+--Create policy using S3 service and select 1 bucket named avengers-1 >> copy paste bucket ARN and two image ARN will also copy paste in that Specific resources.
+--Attached this policy to IAM user (local user) and try to access S3 service.
+
+3 create policy to deny the access of Specific bucket.
+--Create new policy with S3 service all S3* (Full S3 permission) &  deny it >> "switch to deny permissions">> select all resources.
+--attached the policy to IAM user (local user) ironman
+--Access through IAM user.
+
+4 create policy to create the user only and can attach policy to them.
+--Create policy with IAM service>> List All select, Read(GetUser, GetUserPolicy), Write(CreateUser), Permission management(AttachUserPolicy) …..select user related required action policies
+--Attach policy to IAM user.
+--Switch to IAM user and try to create IAM user "dhote" and attach "policy4" to that created user dhote
+ 
+
+5.create policy to place the user in group only
+--Make group of named "cloud"
+--Make policy of Full List, Read(GetGroup, GetGroupPolicy, GetuserPolicy, GetPolicy), Write(AddUserToGroup)>> All resources
+--Attached this policy to IAM ironman
+--Switch to IAM user and try to add any existing or new IAM user into group cloud.
+
+
+6.policy to get "read" access of all user, group but not policy
+--Make policy with IAM service List (ListGroups, ListUsers)>>>Read(GetGroup, GetUser)>>>Resources All
+--Attach policy to IAM user .
+--Switch to IAM user and check if it read users & groups but not policies.
+
+
+7. policy to get access of billing, ec2 and cloudwatch
+--Make policy with (EC2, billing, IAM full access, CloudWatch) full Access.
+--Attached to IAM user.
+--Go to root account "IAM User and Role Access to Billing InformationEdit" section and Activate IAM Access and update it.
+--Try to access ec2 & CloudWatch & billing service from IAM user (local user).
+
+
+Que1. how to see objects permission after creater bucket and after mounting specific resources.
+Que2. Your policy character exceeds the non-whitespace character limit of 6,144. what's that ???
+
+
+
+
+
+AWSAccessKeyId=AKIA4COVBKTNOZFDRIRE
+AWSSecretKey=eA25+BRPs0IVqbrl7IGqX/KOq1qkFCDHLbInBiIR
+
+
+
