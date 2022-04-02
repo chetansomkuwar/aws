@@ -1,0 +1,47 @@
+Que 1. how to give access only north vargenia
+
+Add 4 users >> 2 groups (devops & cloud) >> cloud member will acess thier password will only no & devops group thier no will passsword standars
+>> cloud group SE3 full access % other EC2 full access >> Devops EC2 full access in north vergenia.
+
+Answer:--
+
+1. >>>>> in Google.com >>> "how to give ec2 full access policy in north verzenia resion"
+2. >>>>> copy jason code and ADD North vargenia code "us-east-1"
+
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": "ec2:*",
+            "Resource": "*",
+            "Effect": "Allow",
+            "Condition": {
+                "StringEquals": {
+                    "ec2:Region": "us-east-2"
+                }
+            }
+        }
+    ]
+}
+
+
+
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": "ec2:*",
+            "Resource": "*",
+            "Effect": "Allow",
+            "Condition": {
+                "StringEquals": {
+                    "ec2:Region": "us-east-1"      --------------------->>>>>>>>>> this one for north verzinia region will changed
+                }
+            }
+        }
+    ]
+}
+
+

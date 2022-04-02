@@ -1,0 +1,15 @@
+15/03/2022
+
+1.Set Boundary
+
+>> Create policy with "IAMfullaccess" >>> attached to the IAM user.
+>> Set Permission Boundary :- again create one more policy in SetPermissoinBoundary
+	(I want to set only one permission to IAM user that permission is "only policy creation") 
+
+____create SetPermissoinBoundary policy with service IAM
+    (List:FULL, Read:GetPolicy,GetUserPolicy, Permission Management:CreatePolicy,PutGroupPolicy, Resources:ALL)
+>> Attached this new policy to IAM user and try to access it.
+
+
+(Note:- Here we set 2 policies in one IAM user 1p is IAMfullAccess & 2p is setboundarypolicy __onlycreatepolicy_)
+	 
