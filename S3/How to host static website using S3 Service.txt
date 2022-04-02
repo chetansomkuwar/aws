@@ -1,0 +1,24 @@
+Why we host website from S3 service AWS - 1.> Cost saving
+							2.> Time saving
+							3.> Serverless hosting
+
+
+Steps to host static website using S3 service:-
+
+Step 1 - create a bucket using S3 service (Bucket name >> region >> {Object Ownership} ACL disabled >> Uncheck the Block all public access >> disabled Bucket Versioning)
+
+Step 2 - Download CSS free template and extract the file.
+
+Step 3 - Upload the all folders and files in bucket.
+
+Step 4 - Move all extracted files in template folder into the bucket
+
+Step 5 - upload index.html page & create and upload error.html page.
+
+Step 6 - Select all files and folders in that bucket >> Action >> Make all Public.
+
+Step 7 - Go to the "Permissions" >> ACL Everyone(public access) select List & Read.
+
+Step 8 - Go to "Properties" >> Enabled 
+
+Step 9 - Hit the website

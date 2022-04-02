@@ -1,0 +1,10 @@
+Replication rule - 1.> for backup purpose
+		       2.> we can easily share our docs in our diffrent offices in diffrent region 
+
+
+Step 1 - create 2 buckets with "Bucket Versioning - Enabled" & "Object Lock - Disabled"
+
+Step 2 - we have to create replication rule only on 1 bucket, so go to bucket 1 >> Management >> create replication rule >> Replication rule name >> Status - Enabled 
+	   >> Source Bucket - Apply to all objects in the bucket >> Destination >> IAM role - Create new role or try to use existing one.
+
+Step 3 - upload some file to bucket 1 then it will automatically create replica in bucket 2.

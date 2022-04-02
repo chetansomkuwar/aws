@@ -1,0 +1,32 @@
+==> Access S3 Bucket of anoher users AWS account.
+
+
+Chetan Account ID:- 829912339674
+
+Rupam Account ID:- 522527085219
+
+Rupam's role ARN:- arn:aws:iam::522527085219:role/rupamroles3read
+
+
+
+
+
+
+Step 1 - chetan root >> make group with permission "s3readonlyAccess" and creeate & add 2 users in that group.
+
+
+
+Step 2- Rupam root >> create a buuckets >> create role with "AWS Another Account" and "put trusting CHETAN account ID or Principal element" >> attach permission policy (AmazonS3readonlyAccess)
+
+		(....in here rupam's bucket chetan will able to see with the help of role and chetan's principal element )
+		
+		>> put role name >> create role done. >> copy and paste Role ARN in notepad.
+
+Step 3- chetan's root >> groups >> permissions >> create and attach inline policy >> Service-STS, Actions- AssumeRole, Resource-* ( C&P Role ARN of chetan's root) >> next >> Review >>
+			role name:- chetanroleinline >> inline policies attached.	
+
+			
+Swicth to chetan's IAM user1 & switch the role and access the S3 buckets.......DONE.
+
+
+
