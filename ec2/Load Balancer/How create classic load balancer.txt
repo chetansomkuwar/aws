@@ -1,0 +1,48 @@
+steps to create CLASSIC LOAD BALANCER:-
+
+step 1 - firstly create 3 instance with bash script and HTTP port in scurity group.
+
+a. script:-
+	
+#!/bin/bash
+yum update all -y
+yum install httpd -y
+systemctl start httpd
+systemctl enable httpd
+echo "hello world, welcome to $HOSTNAME" >> /var/www/html/index.html 
+
+b. scurity group:- add http port / custom:- anywhere
+
+step 2 - check where all public running or not or our html page hitting or not.
+
+step 3 - create "Load Balancer- classic load balancer" >> enable advance VPC >> select subnet "according your instance"
+
+step 4 - "Assign security group" >> add security group according to our instance >>
+
+step 5 - health check
+
+step 6 - "Add ec2 instance" >> select all 3 running instances, where html page created >>
+
+step 7 - Add Tags
+
+step 8 -  Review.
+
+step 9 - wait for load balancer goes in service.
+
+step 10 - copy&paste DNS in incognito mode and check wheather all html page working or not with "refreshin 3 time a tab" 
+
+
+:::Types of load balancer:-
+
+1. Classic Load Balancer
+2. Application Load Balancer
+3. Network Load Balancer
+4. Gateway Load Balancer
+
+
+Concepts of load balancer:-
+
+1s. Round Robin- round robin one sub-type of classic load balancer, it will distribute users request to instances according to sequencialy cyclic round with.
+2. Least connection- In least connection all users request traffic goes towards "healthy state" of instances, where less amount of user are connected ot that instances.
+3. Least time- In least time, it depends on instancce type--> high configuration instance will get high "response time from that instance" and required "few active connection on that instance".
+4. Over flow- In over flow concept, will decide capacity of that instance, will decide percentage(%) of perticular instance, when perticular instance capacity will overflowed then it will automatically switch to another instance.
