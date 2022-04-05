@@ -1,0 +1,74 @@
+Application Load Balancer:-
+
+1. it is based on 7th layer of OSI model.
+2. it helps to route traffic "based on tha path" that we will typing in url section .
+3. it is one of the type of extended web server.
+4. it will route user's request according to user's needed path.
+5. by default it will accept HTTP & HTTPS.
+6. we can easily add or remove target group from load balancers without disrupting of your instances and load balancers.
+
+
+
+
+Step 1 - firstly we have to create 2 instances for laptop.
+
+scripts-
+
+#!/bin/bash
+yum update all -y
+yum install httpd -y
+systemctl start httpd
+systemctl enable httpd
+echo "hello world, welcome to my laptop page $HOSTNAME" >> /var/www/html/index.html 
+
+--security group- Add security group with SSH with HTTP
+
+
+
+Step 2 - we have to create 2 instances for mobile.
+
+script:
+
+#!/bin/bash
+yum update all -y
+yum install httpd -y
+systemctl start httpd
+systemctl enable httpd
+mkdir -p /var/www/html/mobile/
+echo "hello world, welcome to my mobile page $HOSTNAME" >> /var/www/html/mobile/index.html 
+
+--security group- Add security group with SSH with HTTP
+
+
+Step 3 - we have to create 2 instances for tab.
+
+script:
+
+#!/bin/bash
+yum update all -y
+yum install httpd -y
+systemctl start httpd
+systemctl enable httpd
+mkdir -p /var/www/html/tab/
+echo "hello world, welcome to my tab page $HOSTNAME" >> /var/www/html/tag/index.html 
+
+--security group- Add security group with SSH with HTTP
+
+"All instances ready"
+
+
+
+Step 4 - "create all 3 target group for mobile, laptop, tab"
+
+	we can attach target group to the { Instance, IP Address, Lambda Function, Application Load Balancer }
+
+
+
+Step 5 - Create Application Load Balancer >> Load Balancer name >> "scheme- internate facing" >> ipv4 >> "Network Mapping"-  attach default VPC >> "Mapping"- select availability zone according to instances (our servers) 
+		>> add default securty group >> create >> wait for in healthy state.
+
+Step 6 - go to load balacner >> lister >> view and edit rules >> if {Path is/mobile*} >> forwarded to we created "target group".
+
+Step 7 -  copy&paste Applciation laod balancer DNS >> /mobile/ >> /tab/ 
+
+Step 8 - ................./mobile/ /tab/ /laptop/
