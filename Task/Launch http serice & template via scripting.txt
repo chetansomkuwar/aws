@@ -1,0 +1,19 @@
+step 1 - launch any instance with "script" and "HTTP" security group.
+
+script-
+
+#!/bin/bash
+yum install httpd -y
+systemctl start httpd 
+systemctl enable httpd
+cd /var/www/html/ 
+wget https://www.free-css.com/assets/files/free-css-templates/download/page277/royal.zip
+unzip royal.zip
+
+[wget - "link of our template"]
+[unzip- unzip our template]
+
+
+step 2 - hit instance public ip >> test page come.
+
+step 3 - { http://public ip/template_name }
