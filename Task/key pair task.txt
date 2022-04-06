@@ -1,0 +1,6 @@
+How to recover lost key
+
+
+create instance >> stop instance >> create "snapshot" of volume >> Action >> create "Image" from snapshot >> create AMI >> create instance from that AMI.
+
+		New key pair generated.
