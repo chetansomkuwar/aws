@@ -1,0 +1,41 @@
+Scalling- Mostly in AWS we preffer vertical scalling.
+
+scalling type:- 1.Horizental	
+		    2.Vertical
+
+scalling plan:-1. Minimum 
+		   2. Maximum
+
+
+Vertical scalling
+
+step 1 - Create one instance "t2 micro" >> Stop instance >>
+	   >> instance setting >> change instance type "t2 extra large".
+
+Note:- 1. High maintainance.
+	 2. increase initital cost.
+       3. we have to stop current running instance.
+	 4. we can change instance type.
+.......................................................................................................................
+
+Horizental scalling
+
+step 1 - create one instance >> Action >> Image and Template >> create more like this.
+
+Note:- 1. we don't have to stop running instances.
+	 2. we can replicate our imstances. (only same configuration & same of same instant type)
+
+........................................................................................................................
+
+Autoscalling components:- 
+
+1.Autoscalling Group
+	- Collection of EC2 instances, with similar characteristics for scaling purpose.
+	- When you create a group, we can specify its minimum, maximum, and, desired number of EC2 instances.
+
+2. Configure
+	-It is a template used by the auto scaling group to launch EC2 instances.
+	-We can specify information such as the AMI ID, instance type, key pair, and security groups for your instances while creating the launch configuration.
+
+3. Scalling Plan
+	- informs Auto Scaling how and when to scale.
