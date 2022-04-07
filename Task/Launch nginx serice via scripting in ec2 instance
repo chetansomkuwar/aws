@@ -1,0 +1,11 @@
+#!/bin/bash
+sudo yum update -y
+sudo amazon-linux-extras install nginx1 -y
+sudo systemctl start nginx
+sudo systemctl enable nginx 
+sudo mkdir -p /usr/share/nginx/html/chetan
+sudo touch /usr/share/nginx/html/chetan/index.html
+sudo echo " hello everyone, Welcome to my new nginx page by chetan" >> /usr/share/nginx/html/chetan/index.html
+sudo mkdir -p /usr/share/nginx/html/chetan/rishab
+sudo touch /usr/share/nginx/html/chetan/rishab/ index.html
+sudo echo " hello everyone, Welcome to my new nginx page by rishab" >> /usr/share/nginx/html/chetan/rishab/index.html
