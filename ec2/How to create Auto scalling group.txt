@@ -1,0 +1,52 @@
+We can create autoscalling group with:-
+1. Launch configuration
+2. Template (AWS recommended)
+
+
+ { TEMPLATE --->> AUTO SCALLING GROUP --->> CHECK IN CLOUDWATCH }
+
+Template through-
+
+Step 1 - create instance >> go to template >> create template >> "Action"- Create auto scalling group
+
+Step 2 - then automatically go to "Auto scalling group"
+
+Step 3 - 1. Choose template or Configuration
+
+Step 4 - 2. Choose instance type >> select AZ's >> set Group size & scalling policy >> review >> create.
+
+Step 5 - Go to instance check instance created or not.
+
+Step 6 - Go to cloudwatch >> metrics >> EC2 >> By Auto scalling group-- automatically created >> now, we can check here.
+
+.........................................................................................................................................................................
+
+ { Launch Configuration Through:-  LAUNCH CONFIGURATION ---->> AUTO SCALLING GROUP >> CLOUDWATCH }
+
+Step 1 - Go to "Auto scalling" section on left side 
+
+Step 2 - create Launch configuratoin >> AMI image (Region is specific) >> select "t2micro" free instance
+	   >> IAM instance profile (user policy) >> check in "Monitoring service" >> storage >> creat securtiy group with SSH, HTTP
+	   >> select configiration >> go to "Action" >> create autoscalling group >> name- >> VPC & Subnet
+	   >> Load Balancer: No >> Health >> Check Monitoring: ON Enable >> customozied Desired, Minimum, Maximum >> Target Scalling Policy
+	   >> Notification (SNS, SQS) >> Tags >> Review >> created
+
+Step 3 - Go to cloudwatch >> metrics >> EC2 >> By Auto scalling group-- automatically created >> now, we can check here.
+
+.........................................................................................................................................................................
+
+Note:- In Auto scalling "Launch configuration" we don't get default SSH service. 
+
+Traffic increase >> maximum 
+Traffic decrease >> desired 
+covid loss >> desired --> to Minimum...Manually
+
+.........................................................................................................................................................................
+
+The requested configuration is currently not supported:-
+
+1. Cause:- launch template or launch configuration might not be compatible with the instance type, 
+            or the instance configuration might not be supported in your requested AWS Region or Availability Zones.
+
+2. Solution:- Ensure that you have chosen an AMI that is supported by your instance type.
+		  If you use Dedicated Instances or Dedicated Hosts, ensure that you have chosen an instance type that's supported as a Dedicated Instance or Dedicated Host.
