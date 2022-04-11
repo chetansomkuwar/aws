@@ -1,0 +1,58 @@
+REQUIRED THINGS TO NOTEDOWN IN NOTEPAD - 1. Security group
+						     2. Scripting of all extended http web servers
+						     3. Reigion specific AMI Image ID
+
+
+Flow:- Launch Configuration --> Auto Scalling Group --> Target Group --> Load Balancer
+	 Auto scalling group --> Attach load balancer --> Copy & Paste DNS of Load balancer.
+
+
+Auto Scaling group types:- Static Auto-scaling
+			         Dynamic Auto-scaling
+				   Schedulsed Dynamic Auto-scaling
+
+
+
+Step 1 - Create Launch onfiguration (Home_page )> select AMI {AMI is region specific} > Instance type > "ADD BASH SCRIPT in user data > SG > create.
+	   >> Create Launch onfiguration (Mobile_page) > select AMI {AMI is region specific} > Instance type > "ADD BASH SCRIPT in user data > SG > create.
+         >> Create Launch onfiguration (laptop_page) > select AMI {AMI is region specific} > Select Instance type > "ADD BASH SCRIPT in user data > SG > create.
+
+
+
+Step 2 - >> Select Configuration >> and CREATE Auto-Scalling Group-----{STATIC}
+
+	    >> Auto scaling group NAME-(ASG-home-1) > Select Launch "Configuration or Template" > default VPC - select all subnets > for now, Dont attach "Load Balancer" 
+	    > Mention Auto scaling group or size of group (STATIC) > Notification > tag > review.
+        ..............................................................................................................................................................
+	    >> Select Configuration >> and CREATE Auto-Scalling Group----{DYNAMIC}
+
+	    >> Auto scaling group NAME-(ASG-mobile-2)- > Select Launch "Configuration or Template" > default VPC - select all subnets > for now, Dont attach "Load Balancer" 
+	    > Mention Auto scaling group or size of group (STATIC) > Notification > tag > review.
+	 ..............................................................................................................................................................  
+	    >> Select Configuration >> and CREATE Auto-Scalling Group---{SCHEDULED DYNAMIC}
+
+	    >> Auto scaling group NAME-(ASG-laptop-3)- > Select Launch "Configuration or Template" > default VPC - select all subnets > for now, Dont attach "Load Balancer" 
+	    > Mention Auto scaling group or size of group (STATIC) > Notification > tag > review. 
+
+	    >> select ASG-laptop-3 ( dynamic schedule) >> Auto Scalling in bottom > schedule cron.
+	 ..............................................................................................................................................................  
+
+
+
+
+Step 3 - >> CREATE TARGET GROUPS:-TG-HOME-1 (for targeting instance in load balancer) > "Target type"- Instance > (/) -- it will take by default path. > don't registance & Attach any instance > create.
+	   >> CREATE TARGET GROUPS:-TG-MOBILE-2 (for targeting instance in load balancer) > "Target type"- Instance > (/) -- it will take by default path. > don't registance & Attach any instance > create.
+	   >> CREATE TARGET GROUPS:-TG-MOBILE-2 (for targeting instance in load balancer) > "Target type"- Instance > (/) -- it will take by default path. > don't registance & Attach any instance > create.
+
+
+
+Step 4 - >> CREATE LOAD BALANCER (ALB) > Default-VPC & at least 2 AZ's > SG > Listner- 1st Target Group (other we will add by editing)
+	   >> go to Listner in ALB (View&Edit) > insert (/Home*)_path and Forwarded to TARGET GROUP_home, same for mobile and laptop.
+
+
+
+Step 5 - >> then ALL Auto scaling group attach to the Load balancer > select Home_Auto-Scaling_group > go to details > attach to the Application Load Balancer.
+											  > select Mobile_Auto-Scaling_group > go to details > attach to the Application Load Balancer.
+											  > select Laptop_Auto-Scaling_group > go to details > attach to the Application Load Balancer.
+
+Step 6 - >> Copy & paste DNS load balancer, check weather all ip instances Working or not !

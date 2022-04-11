@@ -1,0 +1,36 @@
+#!/bin/bash
+yum install httpd -y
+systemctl start httpd 
+systemctl enable httpd																	
+echo "welcome to Home page $HOSTNAME" >> /var/www/html/index.html                               -static autoscaling
+
+
+#!/bin/bash
+yum install httpd -y
+systemctl start httpd 
+systemctl enable httpd																	
+mkdir -p /var/www/html/mobile
+echo "welcome to mobile page $HOSTNAME" >> /var/www/html/mobile/index.html 				-dynamic autoscalling
+
+
+#!/bin/bash
+yum install httpd -y																		
+systemctl start httpd 
+systemctl enable httpd
+mkdir -p /var/www/html/laptop
+echo "welcome to laptop page $HOSTNAME" >> /var/www/html/laptop/index.html				-dynamic scheduled autoscaling
+
+
+
+ami-0c02fb55956c7d316 - North Vrg region
+
+Securtiy Group....
+
+
+
+
+
+
+
+
+
