@@ -1,0 +1,30 @@
+Step 1 - launch any instance with "script" and "HTTP" security group.
+
+script-
+
+#!bin/bash
+sudo apt update
+sudo apt install apache2 -y
+sudo apt install curl -y
+sudo mkdir -p /var/www/html/chetan/
+cd /var/www/html/chetan/
+sudo touch index.html
+sudo apt install vim -y
+sudo echo "<h1>Hello everyone</h1> <h2>Welcome to Chetan's Page in Ubuntu</h2>" >> /var/www/html/chetan/index.html
+systemctl restart apache2
+systemctl enable apache2
+
+Step 2 - hit instance public ip >> test page come.
+
+Step 3 - http://localhost/chetan/
+
+
+
+..................................................................................................................
+
+
+
+to stop apache server- service apache stop
+to start apache service- apachectl -k start
+to install vim- sudo apt install vim -y
+to install curl- sudo apt install curl -y
