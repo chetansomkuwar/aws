@@ -1,0 +1,9 @@
+# aws configure
+# aws s3 ls
+# sudo aws s3 sync s3://jarvis-buck /mnt
+# ls /mnt
+# cd /mnt/exportedlogs/1e5f1068-f9b3-4fcd-a768-2cd24f7a7566/i-0b2f0fc9856ab4771/
+# ls
+# sudo gunzip 000000.gz
+# cat 000000
+
