@@ -1,0 +1,10 @@
+# Create static website.
+	
+	1. create static website in S3 bucket
+
+
+# Create Distribution.
+	
+	1.Create CloudFront Distribution.
+	2.In Origin Domain select origin S3 bucket, where our static website is hosted.
+	3.In Origin Path mention the "Static website URL"
